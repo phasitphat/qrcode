@@ -1,0 +1,25 @@
+{% load static %}
+<title>Student Detail</title>
+<ul>
+{% for student in student_list %}
+
+<!-- {{ student.id }}
+{{ id }} -->
+
+    {% if student.id and id %} 
+
+		<h1>Student ID : {{ student.student_id }}</h1>
+		<h1>Student Name : {{ student.name }}</h1>
+		<h1 >Profile Photo</h1>
+		<img src="{{ student.photo.url }}" alt="Profile Photo" width="500px" height="500px">
+		<h1 >QrCode</h1>
+		{% with '/media/qrcode_image/'|add:id|add:'.png' as qr %}
+		  <img src="{% static qr %}">
+		{% endwith %}
+
+		<!-- <h1>{{ qr_image }}</h1> -->
+
+    {% endif %}
+
+{% endfor %}
+</ul>

@@ -1,0 +1,6 @@
+<title>Student List</title>
+<ul>
+    {% for student in student_list %}
+        <h1><li><a href="{{ student.id }}/">{{ student.student_id }}</a></li></h1>
+    {% endfor %}
+</ul>
